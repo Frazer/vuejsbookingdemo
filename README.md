@@ -4,7 +4,7 @@ Vue.js demo using jquery.ajax, autocomplete and date pickers
 
 
 
-Hosted at [http://frazerk.net/booking/booking.html]
+Hosted at http://frazerk.net/booking/booking.html
 
 
 plugins	folder with autocomplete-Awesomplete  and  date picker files
