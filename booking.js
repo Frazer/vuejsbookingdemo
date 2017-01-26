@@ -201,7 +201,7 @@ function clearError(field){
 
 function locationSearch(searchString, searchField){	
 	
-  	jQuery.getJSON(
+  	$.getJSON(
 		"http://gd.geobytes.com/AutoCompleteCity?callback=?&q="+searchString,
 		function (data) {
 			returnedSearches[searchField] = data;
@@ -223,7 +223,7 @@ function locationSearch(searchString, searchField){
 function locationConfirmation(searchString,searchField){	
 	
 	var cityID;
-  	jQuery.getJSON(
+  	$.getJSON(
 		"http://gd.geobytes.com/GetCityDetails?callback=?&fqcn="+searchString,
 		function (data) {
 			//console.log(data);
