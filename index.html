@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>United Visions Demo Booking</title>
+	<link rel="stylesheet" href="booking.css" />
+
+	<meta charset="utf-8"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+
+
+  	<div class="mainContainer">
+
+		<div class="logo-wrapper">
+			<a class="header-logo" ></a>
+		</div>
+		<div class="clear"></div>
+
+
+		<div id="UVSearch">
+		  <div class="searchFormSectionOne">	
+				
+			<div class="searchDestinations">
+
+				<div class="searchWrapper">
+				 	From<br/>	
+				 	 <div class="searchField searchFieldFrom" v-bind:class="{ errorBorder: fromError }" >
+				  		<input id="journeyFrom" autofocus  class="awesomplete" 
+				  		   v-on:keyup="update('from',$event)" v-on:awesomplete-select="setPlace('from',$event)"  />
+					</div><br/>
+					<div class="error" id="searchFromError" v-bind:class="{ errorReady: true }">{{ fromError }}</div>
+				</div>
+
+				<div id="invert-search-btn" v-on:click="switchSearch"></div>
+
+				<div class="searchWrapper">
+					To:<br/>
+					<div class="searchField searchFieldTo" v-bind:class="{ errorBorder: toError }" >
+						<input id="journeyTo" class="awesomplete" 
+						    v-on:keyup="update('to',$event)"   v-on:awesomplete-select="setPlace('to',$event)"   />
+					</div><br/>
+					<div class="error" id="searchToError" v-bind:class="{ errorReady: true }">{{ toError }}</div>
+
+				</div>
+
+			</div>
+
+			<div class="searchDates">
+				
+				<div class="datePickerWrapper">Departure<br/>
+					<input class="datePicker leaveDate" type="text" id="datepicker" v-bind:class="{ errorBorder: leaveError }" >
+					<br/>
+					<div class="error" id="leaveDateError" v-bind:class="{ errorReady: true }">{{ leaveError }}</div>
+
+				</div>
+				<div class="datePickerWrapper">Return (optional)<br/>
+					<input class="datePicker returnDate" type="text" id="datepickerReturn" v-bind:class="{ errorBorder: returnError }" >
+					<br/>
+					<div class="error" id="returnDateError" v-bind:class="{ errorReady: true }">{{ returnError }}</div>
+				</div>
+
+			</div>
+
+		  </div><!--End Search form section one-->
+		  <div class="searchFormSectionTwo">
+				<div id="submitButton" v-on:click="submitSearch" v-on:keydown="submitSearch" tabindex="0" role="button" >Search</div>
+		  </div>
+
+
+
+		</div>	<!--End UV search and end Vue component-->
+
+	</div>
+
+
+	<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+
+	<script src="booking.js"></script>
+
+
+	<script src="plugins/awesomplete.js" async onload="initializeFields()"> // https://leaverou.github.io/awesomplete/ </script>
+	<link rel="stylesheet" href="plugins/awesomplete.css" />
+
+
+	<script src="plugins/moment.min.js">//  http://momentjs.com - for validating dates</script>
+	<link rel="stylesheet" href="plugins/pikaday.css" />
+	<script src="plugins/pikaday.js" async onload="initializeDates()">
+	// date datepicker from  https://github.com/dbushell/Pikaday
+	</script> 
+
+
+</body>
+</head>

@@ -1,0 +1,243 @@
+/* luggage.jpg and icon.jpg courtesy of pixabay.com - free images*/
+
+body {
+	background-image: url("./luggage.jpg");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-position: center; 
+}
+
+.logo-wrapper{
+	float:right;
+}
+.clear{
+      clear: both;
+}
+
+.header-logo{
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+	background-size: auto 100%;
+	background-image: url("http://frazerk.net/bb/images/bb/UVLogoSmall.png");
+	background-position: center center;
+	display: inline-block;
+	height: 35px;
+	width: 150px;
+	margin-top: 4px
+}
+
+
+.mainContainer{ margin: auto; width:1200px; margin-top:20vh;}
+
+
+.searchFormSectionOne, .searchFormSectionTwo{
+	display: flex;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.searchFormSectionOne{
+	padding-top: 20px;
+}
+.searchFormSectionTwo{
+	padding-bottom: 20px;
+}
+
+
+.searchField{width:340px;}
+
+.searchDates, .searchDestinations{
+	display: flex;
+}
+
+
+#UVSearch{
+	margin-top: 50px;
+	border:1px solid black;
+	border-radius: 10px;
+	background: white;
+}
+
+.awesomplete{width:98%;}  /* fixes display bug on some firefox browsers*/
+
+.awesomplete ul li:first-child{
+	padding-top: 16px;
+}
+.awesomplete ul li:first-child:before{
+	content: 'CITIES';
+	position: absolute;
+	left:0px;
+	top:-2px;
+	padding-left: 10px;
+	width: calc(100% - 9px);
+	height: 16px;
+	font-size: 13px;
+	background: #aab6bc;
+	border: inherit;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: white;
+}
+
+.awesomplete mark{
+	background: none !important;
+	background-color: none !important;
+}
+
+#invert-search-btn {
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+	background-size: auto 100%;
+	background-image: url('./switch.png');
+	background-size: 25px;
+	padding-top: 28px;
+	z-index: 0;
+	display: block;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	background-position: center center;
+	opacity: 0.6;
+	z-index:10;
+}
+
+.searchField{
+	background-repeat: no-repeat;
+	
+	background-position: 2px 6px;
+	background-size: auto 27px;
+	background-image: url("./icon.jpg");
+	padding-left: 35px;
+	height: 40px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.searchField input{
+	padding-top: 10px;
+	padding-bottom: 6px;
+	padding-left: 5px;
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	font-size: 16px;
+}
+.searchField input:focus, .searchDates input:focus{
+	outline:none;
+}
+
+.datePicker{
+	padding-top: 10px;
+	padding-bottom: 6px;
+	font-size: 16px;
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	background-size: auto 25px;
+	padding-left: 30px;
+}
+
+.leaveDate, .returnDate{
+	background-image: url("./calendar.png");
+}
+
+.datePickerWrapper{
+	padding-left: 10px;
+	white-space: nowrap;
+}
+.datePickerWrapper input{
+	width:135px;
+}
+
+.searchFormSectionTwo{
+	justify-content: flex-end;
+}
+
+
+#submitButton{
+	color: #fff;
+	background-color: #8BC34A;
+	border-color: #7eb73d;
+	display: block;
+    width: 115px;
+    height: 25px;
+    padding: 10px;
+    padding-bottom: 0px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.error{
+	font-family: "Open Sans";
+	color: #E60606;
+	font-size: 12px;
+	margin-left: 10px;
+	visibility: hidden;
+}
+.errorReady{   /* added once Vue is ready and has rendered away  {{errorMessages}}  */
+	visibility: visible;
+}
+.searchWrapper .error{
+	margin-top: -16px;
+}
+
+.errorBorder{
+	border-color: #E60606;
+	border-style: solid;
+}
+
+
+@media (max-width: 1220px){
+	.mainContainer{width:1000px;}
+
+	.searchField{width:238px;}
+} 
+
+@media (max-width: 1050px){
+	.mainContainer{width:960px;}
+
+	.searchField{width:218px;}
+} 
+
+@media (max-width: 990px){
+	.mainContainer{width:95vw;}
+	.searchFormSectionOne, .searchFormSectionTwo{ display:block ;}
+	.searchWrapper{ width: 47%;}
+	.searchField{ width:90%;}
+	.datePickerWrapper input{width: 28vw;}
+	.datePickerWrapper {padding-left: 0px; padding-right: 20px;}
+	#submitButton{margin-top: -40px;  float: right;}
+
+
+
+} 
+
+@media (min-width: 750px){
+	#invert-search-btn{
+		position: relative;
+	}
+} 
+
+@media (max-width: 749px){
+	.searchDestinations{ display:block ;}
+	.searchWrapper{ width: 100%;}
+	.searchField{ width:calc(100% - 28px)}
+	.searchDates{display: block;}
+	.datePickerWrapper input{width: 98%;}
+
+	.searchFormSectionTwo{overflow: hidden;}
+
+	#submitButton{margin-top: 10px;}
+	#invert-search-btn{
+		position: absolute; right:4vw;
+		-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
+		padding-top: 34px;
+	}
+
+} 
+
