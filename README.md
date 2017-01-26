@@ -2,9 +2,12 @@
 
 Vue.js demo using jquery.ajax, autocomplete and date pickers
 
-plugins				folder with autocomplete-Awesomplete  and  date picker files
 
 
+Hosted at [http://frazerk.net/booking/booking.html]
+
+
+plugins	folder with autocomplete-Awesomplete  and  date picker files
 
 
 I had to add this function to plugins/pikaday.js
@@ -18,7 +21,7 @@ getDateOrNull: function()
 },
 
 
-and to plugins awesomplete: line 67:
+and to plugins/awesomplete.js: line 67:
 
 if (c === 13 && me.selected) { // Enter
 	evt.preventDefault();
